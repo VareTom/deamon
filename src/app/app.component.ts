@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HttpService } from './services/http.service'
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'deamon';
+
+  constructor(private httpService: HttpService) {
+  }
+
+  ngOnInit() {
+    this.httpService.get().subscribe()
+  }
 }
